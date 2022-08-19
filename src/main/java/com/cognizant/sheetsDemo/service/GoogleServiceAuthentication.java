@@ -85,7 +85,7 @@ public class GoogleServiceAuthentication implements InitializingBean {
                 JSON_FACTORY,
                 new InputStreamReader(new FileInputStream(file))
         );
-        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+        this.authFlow = new GoogleAuthorizationCodeFlow.Builder(
                 httpTransport,
                 JSON_FACTORY,
                 clientSecrets,
