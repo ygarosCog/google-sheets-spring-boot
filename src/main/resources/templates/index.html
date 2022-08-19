@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form class="data-form" th:action="@{/appendDataToSpreadsheet}" th:object="${formData}" method="post">
+        <p>Spreadsheet id:
+            <input type="text" th:field="*{spreadsheetId}" /></p>
+        <p>Range:
+            <input type="text" th:field="*{range}" /></p>
+        <table>
+            <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text"  th:field="*{data[0][0]}" /></td>
+                <td><input type="text" th:field="*{data[0][1]}" /></td>
+                <td><input type="text" th:field="*{data[0][2]}" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" th:field="*{data[1][0]}" /></td>
+                <td><input type="text" th:field="*{data[1][1]}" /></td>
+                <td><input type="text" th:field="*{data[1][2]}" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" th:field="*{data[2][0]}" /></td>
+                <td><input type="text" th:field="*{data[2][1]}" /></td>
+                <td><input type="text" th:field="*{data[2][2]}" /></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" value="Append data to the end of spreadsheet" />
+    </form>
+    <hr>
+    <form th:action="@{/getDataFromSpreadsheet}" method="get">
+        <input type="submit" value="Get data from spreadsheet"/>
+    </form>
+    <hr>
+    <form th:action="@{/clearDataFromSpreadsheet}" method="post">
+        <input type="submit" value="Clear all data in spreadsheet"/>
+    </form>
+
+</body>
+
+</html>

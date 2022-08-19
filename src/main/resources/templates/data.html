@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/">Get back to index</a>
+    <br>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th th:each="cell: ${colHeaders}" th:text="${cell}"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="row, iStat: ${data}">
+                <td style="padding-right: 35px;" th:text="${iStat.index + 1}"></td><td th:each="cell: ${row.cells}" th:text="${cell}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+app:
+  name: GoogleSheetsDemo-987654321
+  spreadsheet:
+    id: 1grELP9XrkDh2O4aeg_czgoEqUHBWgjl6V5GT5PHjJNY
+  redirect-url: http://localhost:8080/authorized
+  credential-path: credentials.json
+  tokens:
+    file-storage-path: tokens
+  access-type: offline
